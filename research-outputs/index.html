@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Pasindu Udawatta</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="bg-decoration">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+</div>
+
+<nav>
+    <div class="logo">Pasindu Udawatta</div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../education/index.html">Education</a></li>
+        <li><a class="active" href="index.html">Research</a></li>
+    </ul>
+    <div class="mobile-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Research Outputs</h1>
+        <p class="page-subtitle">PUBLICATIONS & PRESENTATIONS</p>
+    </div>
+
+    <!-- Filter Controls -->
+    <div class="controls-section">
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-type="all" onclick="filterByType('all')">
+                All <span class="count">1</span>
+            </button>
+            <button class="filter-tab" data-type="journal" onclick="filterByType('journal')">
+                📄 Journal Articles <span class="count">1</span>
+            </button>
+            <!--                <button class="filter-tab" data-type="conference" onclick="filterByType('conference')">-->
+            <!--                    📑 Conference Papers <span class="count">6</span>-->
+            <!--                </button>-->
+            <!--                <button class="filter-tab" data-type="presentation" onclick="filterByType('presentation')">-->
+            <!--                    🎤 Presentations <span class="count">3</span>-->
+            <!--                </button>-->
+            <!--                <button class="filter-tab" data-type="poster" onclick="filterByType('poster')">-->
+            <!--                    🖼️ Posters <span class="count">2</span>-->
+            <!--                </button>-->
+        </div>
+
+        <div class="search-container">
+            <input class="search-input"
+                   oninput="searchResearch(this.value)"
+                   placeholder="Search by title, authors, or keywords..."
+                   type="text">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <!--            <div class="sort-options">-->
+        <!--                <span class="sort-label">Sort by:</span>-->
+        <!--                <button class="sort-btn active" onclick="sortBy('date')">Date (Newest)</button>-->
+        <!--                <button class="sort-btn" onclick="sortBy('citations')">Citations</button>-->
+        <!--                <button class="sort-btn" onclick="sortBy('title')">Title (A-Z)</button>-->
+        <!--            </div>-->
+
+        <div class="results-info">
+            <span id="resultsCount">Showing all research outputs</span>
+        </div>
+    </div>
+
+    <!-- Research Grid -->
+    <div class="research-grid">
+
+        <div class="research-item"
+             data-search-text="use of prompt-based learning for code-mixed and code-switched text classification pasindu udawatta indunil udayangana chathulanka gamage ravi shekhar surangika ranathunga code-mixing code-switching pre-trained language models xlm-r script adapters sinhala kannada hindi"
+             data-type="journal"
+             data-year="2024">
+            <div class="research-header">
+                <span class="research-type journal">Journal Article</span>
+                <span class="research-year">2024</span>
+            </div>
+
+            <h3 class="research-title">Use of Prompt-based Learning for Code-mixed and Code-switched Text
+                Classification</h3>
+
+            <div class="research-authors">
+                <span class="author-name me">Pasindu Udawatta</span>,
+                <span class="author-name">Indunil Udayangana</span>,
+                <span class="author-name">Chathulanka Gamage</span>,
+                <span class="author-name">Ravi Shekhar</span>,
+                <span class="author-name">Surangika Ranathunga</span>
+            </div>
+
+            <div class="research-venue">
+                <span class="venue-name">World Wide Web </span> •
+                <span class="venue-details">Volume 27, Article Number 63</span>
+            </div>
+
+            <p class="research-abstract">
+                Explores code-mixed and code-switched text classification using prompt-based learning. It introduces a
+                novel approach which combines script-aware modeling with task-specific adapters. Experiments show that
+                this method outperforms standard fine-tuning and prompting techniques across sentiment analysis,
+                hate-speech detection, and humour classification.
+            </p>
+
+            <div class="research-links">
+                <a class="research-link secondary" href="https://doi.org/10.1007/s11280-024-01302-2" target="_blank">
+                    <span class="link-icon">📄</span>
+                    <span>Full Paper</span>
+                </a>
+                <a class="research-link secondary" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=gwabgvAAAAAJ&citation_for_view=gwabgvAAAAAJ:u-x6o8ySG0sC" target="_blank">
+                    <span class="link-icon">📚</span>
+                    <span>Google Scholar</span>
+                </a>
+                <a class="research-link secondary" href="https://github.com/orgs/Lingua-UoM-CSE/repositories" target="_blank">
+                    <span class="link-icon">💻</span>
+                    <span>Code (GitHub)</span>
+                </a>
+                <button class="research-link cite-btn" onclick="showCitation(this)">
+                    <span class="link-icon">📝</span>
+                    <span>Cite</span>
+                </button>
+            </div>
+
+            <!-- Hidden citation -->
+            <div class="citation-box" style="display: none;">
+                <div class="citation-tabs">
+                    <button class="citation-tab active" onclick="switchCitation(this, 'bibtex')">BibTeX</button>
+                    <button class="citation-tab" onclick="switchCitation(this, 'apa')">APA</button>
+                    <button class="citation-tab" onclick="switchCitation(this, 'mla')">MLA</button>
+                    <button class="citation-tab" onclick="switchCitation(this, 'ieee')">IEEE</button>
+                </div>
+                <div class="citation-content">
+                    <pre class="citation-text bibtex active">@article{Udawatta_2024_WWW,
+    author={Udawatta, Pasindu and Udayangana, Indunil and Gamage, Chathulanka and Shekhar, Ravi and Ranathunga, Surangika},
+    title={{Use of prompt-based learning for code-mixed and code-switched text classification}},
+    journal={World Wide Web},
+    volume={27},
+    number={63},
+    year={2024},
+    doi={10.1007/s11280-024-01302-2}
+}</pre>
+                    <pre class="citation-text apa">Udawatta, P., Udayangana, I., Gamage, C., Shekhar, R., & Ranathunga, S. (2024). Use of prompt-based learning for code-mixed and code-switched text classification. <i>World Wide Web</i>, 27(63). https://doi.org/10.1007/s11280-024-01302-2</pre>
+                    <pre class="citation-text mla">Udawatta, Pasindu, et al. “Use of prompt-based learning for code-mixed and code-switched text classification.” <i>World Wide Web</i>, vol. 27, no. 63, 2024, https://doi.org/10.1007/s11280-024-01302-2.</pre>
+                    <pre class="citation-text ieee">P. Udawatta, I. Udayangana, C. Gamage, R. Shekhar, and S. Ranathunga, “Use of prompt-based learning for code-mixed and code-switched text classification,” <i>World Wide Web</i>, vol. 27, no. 63, 2024, doi: 10.1007/s11280-024-01302-2.</pre>
+                </div>
+                <button class="copy-citation-btn" onclick="(this)">Copy to Clipboard</button>
+            </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+            <span class="back-to-top-icon">↑</span>
+            <span class="back-to-top-text">Top</span>
+        </button>
+
+        <script src="script.js"></script>
+</body>
+</html>
