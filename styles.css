@@ -18,12 +18,17 @@
     box-sizing: border-box;
 }
 
+html {
+    background: var(--primary-dark);
+}
+
 body {
     font-family: 'Work Sans', sans-serif;
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
     color: var(--text-light);
     min-height: 100vh;
     overflow-x: hidden;
+    overscroll-behavior: none;
 }
 
 /* =====================================================
@@ -78,15 +83,9 @@ body {
 }
 
 @keyframes float {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    33% {
-        transform: translate(30px, -30px) scale(1.1);
-    }
-    66% {
-        transform: translate(-20px, 20px) scale(0.9);
-    }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
 }
 
 /* =====================================================
