@@ -52,9 +52,9 @@
             <!--                <button class="filter-tab" data-type="presentation" onclick="filterByType('presentation')">-->
             <!--                    🎤 Presentations <span class="count">3</span>-->
             <!--                </button>-->
-            <!--                <button class="filter-tab" data-type="poster" onclick="filterByType('poster')">-->
-            <!--                    🖼️ Posters <span class="count">2</span>-->
-            <!--                </button>-->
+            <button class="filter-tab" data-type="poster" onclick="filterByType('poster')">
+                🖼️ Posters <span class="count">1</span>
+            </button>
         </div>
 
         <div class="search-container">
@@ -80,16 +80,16 @@
     <!-- Research Grid -->
     <div class="research-grid">
 
+        <!-- Journal Article -->
         <div class="research-item"
              data-search-text="use of prompt-based learning for code-mixed and code-switched text classification pasindu udawatta indunil udayangana chathulanka gamage ravi shekhar surangika ranathunga code-mixing code-switching pre-trained language models xlm-r script adapters sinhala kannada hindi"
-             data-type="journal"
-             data-year="2024">
+             data-type="journal" data-year="2024">
             <div class="research-header">
                 <span class="research-type journal">Journal Article</span>
                 <span class="research-year">2024</span>
             </div>
 
-            <h3 class="research-title">Use of Prompt-based Learning for Code-mixed and Code-switched Text
+            <h3 class="research-title">Use of Prompt-Based Learning for Code-Mixed and Code-Switched Text
                 Classification</h3>
 
             <div class="research-authors">
@@ -114,16 +114,27 @@
 
             <div class="research-links">
                 <a class="research-link secondary" href="https://doi.org/10.1007/s11280-024-01302-2" target="_blank">
-                    <span class="link-icon">📄</span>
-                    <span>Full Paper</span>
+                    <img alt="" class="link-icon"
+                         height="16" src="https://www.google.com/s2/favicons?domain=link.springer.com&sz=32" width="16">
+                    <span>Paper</span>
                 </a>
-                <a class="research-link secondary" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=gwabgvAAAAAJ&citation_for_view=gwabgvAAAAAJ:u-x6o8ySG0sC" target="_blank">
-                    <span class="link-icon">📚</span>
+                <a class="research-link secondary" href="https://github.com/orgs/Lingua-UoM-CSE/repositories"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://cdn.simpleicons.org/github/ffffff"
+                         width="16">
+                    <span>Code</span>
+                </a>
+                <a class="research-link secondary"
+                   href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=gwabgvAAAAAJ&citation_for_view=gwabgvAAAAAJ:u-x6o8ySG0sC"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://scholar.google.com/favicon.ico" width="16">
                     <span>Google Scholar</span>
                 </a>
-                <a class="research-link secondary" href="https://github.com/orgs/Lingua-UoM-CSE/repositories" target="_blank">
-                    <span class="link-icon">💻</span>
-                    <span>Code (GitHub)</span>
+                <a class="research-link secondary"
+                   href="https://www.linkedin.com/feed/update/urn:li:activity:7259344409018671106/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5a-UYBoHmAKSq0uqskgSaTLmot1Y7tBE0"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://linkedin.com/favicon.ico" width="16">
+                    <span>LinkedIn</span>
                 </a>
                 <button class="research-link cite-btn" onclick="showCitation(this)">
                     <span class="link-icon">📝</span>
@@ -157,12 +168,77 @@
             </div>
         </div>
 
-        <!-- Back to Top Button -->
-        <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
-            <span class="back-to-top-icon">↑</span>
-            <span class="back-to-top-text">Top</span>
-        </button>
+        <!-- Poster -->
+        <div class="research-item"
+             data-search-text="cvpr computer vision pattern recognition object detection"
+             data-type="poster" data-year="2025">
+            <div class="research-header">
+                <span class="research-type poster">Poster</span>
+                <span class="research-year">2025</span>
+            </div>
 
-        <script src="script.js"></script>
+            <h3 class="research-title">TTSVowelViz: A Tool for Visualising Text-to-Speech Model Training Through Vowel Spaces</h3>
+
+            <div class="research-authors">
+                <span class="author-name me">Pasindu Udawatta</span>,
+                <span class="author-name">Jesin James</span>,
+                <span class="author-name">B.T. Balamurali</span>,
+                <span class="author-name">Catherine Watson</span>,
+                <span class="author-name">Ake Nicholas</span>,
+                <span class="author-name">Binu Abeysinghe</span>
+            </div>
+
+            <div class="research-venue">
+                <span class="venue-name">ICASSP 2025 - Show & Tell</span> •
+                <span class="venue-details">IEEE International Conference on Acoustics, Speech, and Signal Processing</span>
+            </div>
+
+            <p class="research-abstract">
+            </p>
+
+            <div class="research-links">
+                <a class="research-link secondary" href="#" target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://drive.google.com/favicon.ico" width="16">
+                    <span>Abstract</span>
+                </a>
+                <a class="research-link secondary" href="#" target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://drive.google.com/favicon.ico" width="16">
+                    <span>Poster</span>
+                </a>
+                <a class="research-link secondary" href="https://pypi.org/project/ttsvowelviz/"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://pypi.org/favicon.ico" width="16">
+                    <span>PyPI</span>
+                </a>
+                <a class="research-link secondary" href="https://github.com/pasindu-ud/ttsvowelviz"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://cdn.simpleicons.org/github/ffffff"
+                         width="16">
+                    <span>Code</span>
+                </a>
+                <a class="research-link secondary"
+                   href="https://2025.ieeeicassp.org/show-tell-sessions-schedule/#1740032529353-f9a9f77e-c66b"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://www.google.com/s2/favicons?domain=ieee.org&sz=64" width="16">
+                    <span>ICASSP</span>
+                </a>
+                <a class="research-link secondary"
+                   href="https://www.linkedin.com/posts/pasindu-udawatta_texttospeech-tts-speechsynthesis-share-7447097290017751040-yuPT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5a-UYBoHmAKSq0uqskgSaTLmot1Y7tBE0"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://linkedin.com/favicon.ico" width="16">
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+    <span class="back-to-top-icon">↑</span>
+    <span class="back-to-top-text">Top</span>
+</button>
+
+<script src="script.js"></script>
 </body>
 </html>
