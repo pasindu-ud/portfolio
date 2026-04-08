@@ -43,12 +43,12 @@
             <button class="filter-tab active" data-type="all" onclick="filterByType('all')">
                 All <span class="count">1</span>
             </button>
+            <button class="filter-tab" data-type="conference" onclick="filterByType('conference')">
+                📝 Conference Papers <span class="count">1</span>
+            </button>
             <button class="filter-tab" data-type="journal" onclick="filterByType('journal')">
                 📄 Journal Articles <span class="count">1</span>
             </button>
-            <!--                <button class="filter-tab" data-type="conference" onclick="filterByType('conference')">-->
-            <!--                    📑 Conference Papers <span class="count">6</span>-->
-            <!--                </button>-->
             <button class="filter-tab" data-type="poster" onclick="filterByType('poster')">
                 📜 Posters <span class="count">1</span>
             </button>
@@ -80,10 +80,80 @@
     <!-- Research Grid -->
     <div class="research-grid">
 
+        <!-- Conference Paper -->
+        <div class="research-item" data-month="5" data-search-text="ttsvowelviz a tool for visualising text-to-speech model training via vowel spaces pasindu udawatta jesin james b.t. balamurali catherine watson ake nicholas binu abeysinghe evaluation visualisation linguistics interpretability"
+             data-type="conference"
+             data-year="2026">
+            <div class="research-header">
+                <span class="research-type conference">Conference Paper</span>
+                <span class="research-year">2026 May 14</span>
+            </div>
+
+            <h3 class="research-title">TTSVowelViz: A Tool for Visualising Text-to-Speech Model Training via Vowel
+                Spaces</h3>
+
+            <div class="research-authors">
+                <span class="author-name me">Pasindu Udawatta</span>,
+                <span class="author-name">Jesin James</span>,
+                <span class="author-name">B.T. Balamurali</span>,
+                <span class="author-name">Catherine Watson</span>,
+                <span class="author-name">Ake Nicholas</span>,
+                <span class="author-name">Binu Abeysinghe</span>
+            </div>
+
+            <div class="research-venue">
+                <span class="venue-name">LREC 2026 •</span>
+                <span class="venue-details">Language Resources and Evaluation Conference • Palma, Spain</span>
+            </div>
+
+            <p class="research-abstract">
+            </p>
+
+            <div class="research-links">
+                <a class="research-link secondary" href="https://pypi.org/project/ttsvowelviz/"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://pypi.org/favicon.ico" width="16">
+                    <span>PyPI</span>
+                </a>
+                <a class="research-link secondary" href="https://github.com/pasindu-ud/ttsvowelviz"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://cdn.simpleicons.org/github/ffffff"
+                         width="16">
+                    <span>Code</span>
+                </a>
+                <a class="research-link secondary" href="https://pasindu-ud.github.io/ttsvowelviz/"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://cdn.simpleicons.org/github/ffffff"
+                         width="16">
+                    <span>Demo</span>
+                </a>
+            </div>
+
+            <div class="citation-box" style="display: none;">
+                <div class="citation-tabs">
+                    <button class="citation-tab active" onclick="switchCitation(this, 'bibtex')">BibTeX</button>
+                    <button class="citation-tab" onclick="switchCitation(this, 'apa')">APA</button>
+                    <button class="citation-tab" onclick="switchCitation(this, 'mla')">MLA</button>
+                </div>
+                <div class="citation-content">
+                        <pre class="citation-text bibtex active">@inproceedings{yourname2024efficient,
+  title={Efficient Attention Mechanisms for Large-Scale Transformers},
+  author={Your Name and Johnson, Alice},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={37},
+  year={2024}
+}</pre>
+                    <pre class="citation-text apa">Your Name & Johnson, A. (2024). Efficient Attention Mechanisms for Large-Scale Transformers. In Advances in Neural Information Processing Systems (Vol. 37).</pre>
+                    <pre class="citation-text mla">Your Name and Alice Johnson. "Efficient Attention Mechanisms for Large-Scale Transformers." Advances in Neural Information Processing Systems, vol. 37, 2024.</pre>
+                </div>
+                <button class="copy-citation-btn" onclick="copyCitation(this)">Copy to Clipboard</button>
+            </div>
+        </div>
+
         <!-- Journal Article -->
         <div class="research-item"
-             data-search-text="use of prompt-based learning for code-mixed and code-switched text classification pasindu udawatta indunil udayangana chathulanka gamage ravi shekhar surangika ranathunga code-mixing code-switching pre-trained language models xlm-r script adapters sinhala kannada hindi"
-             data-type="journal" data-year="2024" data-month="9">
+             data-month="9"
+             data-search-text="use of prompt-based learning for code-mixed and code-switched text classification pasindu udawatta indunil udayangana chathulanka gamage ravi shekhar surangika ranathunga code-mixing code-switching pre-trained language models xlm-r script adapters sinhala kannada hindi" data-type="journal" data-year="2024">
             <div class="research-header">
                 <span class="research-type journal">Journal Article</span>
                 <span class="research-year">2024 Sep 09</span>
@@ -170,8 +240,8 @@
 
         <!-- Poster -->
         <div class="research-item"
-             data-search-text="ttsvowelviz a tool for visualising text-to-speech model training through vowel spaces pasindu udawatta jesin james b.t. balamurali catherine watson ake nicholas binu abeysinghe"
-             data-type="poster" data-year="2025" data-month="4">
+             data-month="4"
+             data-search-text="ttsvowelviz a tool for visualising text-to-speech model training through vowel spaces pasindu udawatta jesin james b.t. balamurali catherine watson ake nicholas binu abeysinghe" data-type="poster" data-year="2025">
             <div class="research-header">
                 <span class="research-type poster">Poster</span>
                 <span class="research-year">2025 Apr 08</span>
@@ -242,8 +312,8 @@
 
         <!-- Presentation -->
         <div class="research-item"
-             data-search-text="can vowel space visualisation reveal how text-to-speech systems learn pasindu udawatta jesin james catherine watson ake nicholas b.t. balamurali low-resource language bias"
-             data-type="presentation" data-year="2025" data-month="11">
+             data-month="11"
+             data-search-text="can vowel space visualisation reveal how text-to-speech systems learn pasindu udawatta jesin james catherine watson ake nicholas b.t. balamurali low-resource language bias" data-type="presentation" data-year="2025">
             <div class="research-header">
                 <span class="research-type presentation">Presentation</span>
                 <span class="research-year">2025 Nov 28</span>
