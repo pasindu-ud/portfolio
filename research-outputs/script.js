@@ -87,7 +87,9 @@ function applyFiltersAndSort() {
         const type = item.dataset.type;
         const searchText = item.dataset.searchText || '';
         
-        const typeMatch = currentTypeFilter === 'all' || type === currentTypeFilter;
+        // const typeMatch = currentTypeFilter === 'all' || type === currentTypeFilter;
+        const types = (type || '').split(' ');
+        const typeMatch = currentTypeFilter === 'all' || types.includes(currentTypeFilter);
         const searchMatch = currentSearchTerm === '' || searchText.includes(currentSearchTerm);
         
         if (typeMatch && searchMatch) {

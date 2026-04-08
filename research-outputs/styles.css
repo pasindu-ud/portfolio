@@ -413,6 +413,13 @@ nav {
     color: #e97451;
 }
 
+.research-types {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .research-year {
     font-size: 0.9rem;
     color: var(--text-muted);
