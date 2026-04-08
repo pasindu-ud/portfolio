@@ -104,17 +104,22 @@ function applyFiltersAndSort() {
             // Sort by year (newest first)
             const yearA = parseInt(a.dataset.year);
             const yearB = parseInt(b.dataset.year);
-            return yearB - yearA;
-        } else if (currentSortBy === 'citations') {
-            // Sort by citations (highest first)
-            const citA = parseInt(a.dataset.citations) || 0;
-            const citB = parseInt(b.dataset.citations) || 0;
-            return citB - citA;
+            if (yearB !== yearA) return yearB - yearA;
+
+            // Same year → sort by month (newest first)
+            const monthA = parseInt(a.dataset.month) || 0;
+            const monthB = parseInt(b.dataset.month) || 0;
+            return monthB - monthA;
         } else if (currentSortBy === 'title') {
             // Sort by title (A-Z)
             const titleA = a.querySelector('.research-title').textContent.toLowerCase();
             const titleB = b.querySelector('.research-title').textContent.toLowerCase();
             return titleA.localeCompare(titleB);
+        } else if (currentSortBy === 'citations') {
+            // Sort by citations (highest first)
+            const citA = parseInt(a.dataset.citations) || 0;
+            const citB = parseInt(b.dataset.citations) || 0;
+            return citB - citA;
         }
         return 0;
     });
