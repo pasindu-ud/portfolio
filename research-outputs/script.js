@@ -10,7 +10,7 @@ function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     const mobileMenu = document.querySelector('.mobile-menu');
     navLinks.classList.toggle('active');
-    
+
     const spans = mobileMenu.querySelectorAll('span');
     if (navLinks.classList.contains('active')) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -37,7 +37,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 function filterByType(type) {
     currentTypeFilter = type;
-    
+
     // Update active tab
     document.querySelectorAll('.filter-tab').forEach(tab => {
         tab.classList.remove('active');
@@ -45,7 +45,7 @@ function filterByType(type) {
             tab.classList.add('active');
         }
     });
-    
+
     applyFiltersAndSort();
 }
 
@@ -64,13 +64,13 @@ function searchResearch(searchTerm) {
 
 function sortBy(sortType) {
     currentSortBy = sortType;
-    
+
     // Update active sort button
     document.querySelectorAll('.sort-btn').forEach(btn => {
         btn.classList.remove('active');
     });
     event.target.classList.add('active');
-    
+
     applyFiltersAndSort();
 }
 
@@ -81,17 +81,17 @@ function sortBy(sortType) {
 function applyFiltersAndSort() {
     const researchItems = Array.from(document.querySelectorAll('.research-item'));
     let visibleItems = [];
-    
+
     // Filter items
     researchItems.forEach(item => {
         const type = item.dataset.type;
         const searchText = item.dataset.searchText || '';
-        
+
         // const typeMatch = currentTypeFilter === 'all' || type === currentTypeFilter;
         const types = (type || '').split(' ');
         const typeMatch = currentTypeFilter === 'all' || types.includes(currentTypeFilter);
         const searchMatch = currentSearchTerm === '' || searchText.includes(currentSearchTerm);
-        
+
         if (typeMatch && searchMatch) {
             item.classList.remove('hidden');
             visibleItems.push(item);
@@ -99,7 +99,7 @@ function applyFiltersAndSort() {
             item.classList.add('hidden');
         }
     });
-    
+
     // Sort visible items
     visibleItems.sort((a, b) => {
         if (currentSortBy === 'date') {
@@ -125,13 +125,13 @@ function applyFiltersAndSort() {
         }
         return 0;
     });
-    
+
     // Reorder items in the DOM
     const grid = document.querySelector('.research-grid');
     visibleItems.forEach(item => {
         grid.appendChild(item);
     });
-    
+
     updateResultsCount(visibleItems.length);
 }
 
@@ -160,7 +160,7 @@ function updateResultsCount(count) {
 function showCitation(button) {
     const researchItem = button.closest('.research-item');
     const citationBox = researchItem.querySelector('.citation-box');
-    
+
     if (citationBox.style.display === 'none' || citationBox.style.display === '') {
         citationBox.style.display = 'block';
         button.querySelector('span:last-child').textContent = 'Hide Citation';
@@ -172,13 +172,13 @@ function showCitation(button) {
 
 function switchCitation(tab, format) {
     const citationBox = tab.closest('.citation-box');
-    
+
     // Update active tab
     citationBox.querySelectorAll('.citation-tab').forEach(t => {
         t.classList.remove('active');
     });
     tab.classList.add('active');
-    
+
     // Show corresponding citation text
     citationBox.querySelectorAll('.citation-text').forEach(text => {
         text.classList.remove('active');
@@ -192,14 +192,14 @@ function copyCitation(button) {
     const citationBox = button.closest('.citation-box');
     const activeCitation = citationBox.querySelector('.citation-text.active');
     const citationText = activeCitation.textContent;
-    
+
     // Copy to clipboard
     navigator.clipboard.writeText(citationText).then(() => {
         // Visual feedback
         const originalText = button.textContent;
         button.textContent = '✓ Copied!';
         button.style.background = 'var(--accent-teal)';
-        
+
         setTimeout(() => {
             button.textContent = originalText;
             button.style.background = 'var(--accent-gold)';

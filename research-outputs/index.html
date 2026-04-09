@@ -41,13 +41,13 @@
     <div class="controls-section">
         <div class="filter-tabs">
             <button class="filter-tab active" data-type="all" onclick="filterByType('all')">
-                All <span class="count">1</span>
+                All <span class="count">4</span>
             </button>
             <button class="filter-tab" data-type="conference" onclick="filterByType('conference')">
-                📝 Conference Papers <span class="count">1</span>
+                📄 Conference Papers <span class="count">1</span>
             </button>
             <button class="filter-tab" data-type="journal" onclick="filterByType('journal')">
-                📄 Journal Articles <span class="count">1</span>
+                📝 Journal Articles <span class="count">1</span>
             </button>
             <button class="filter-tab" data-type="poster" onclick="filterByType('poster')">
                 📜 Posters <span class="count">1</span>
@@ -65,12 +65,11 @@
             <span class="search-icon">🔍</span>
         </div>
 
-        <!--            <div class="sort-options">-->
-        <!--                <span class="sort-label">Sort by:</span>-->
-        <!--                <button class="sort-btn active" onclick="sortBy('date')">Date (Newest)</button>-->
-        <!--                <button class="sort-btn" onclick="sortBy('citations')">Citations</button>-->
-        <!--                <button class="sort-btn" onclick="sortBy('title')">Title (A-Z)</button>-->
-        <!--            </div>-->
+        <div class="sort-options">
+            <span class="sort-label">Sort by:</span>
+            <button class="sort-btn active" onclick="sortBy('date')">Date (Newest)</button>
+            <button class="sort-btn" onclick="sortBy('title')">Title (A-Z)</button>
+        </div>
 
         <div class="results-info">
             <span id="resultsCount">Showing all research outputs</span>
@@ -81,7 +80,8 @@
     <div class="research-grid">
 
         <!-- Conference Paper -->
-        <div class="research-item" data-month="5" data-search-text="ttsvowelviz a tool for visualising text-to-speech model training via vowel spaces pasindu udawatta jesin james b.t. balamurali catherine watson ake nicholas binu abeysinghe evaluation visualisation linguistics interpretability"
+        <div class="research-item" data-month="5"
+             data-search-text="ttsvowelviz a tool for visualising text-to-speech model training via vowel spaces pasindu udawatta jesin james b.t. balamurali catherine watson ake nicholas binu abeysinghe evaluation visualisation linguistics interpretability"
              data-type="conference presentation"
              data-year="2026">
             <div class="research-header">
@@ -89,7 +89,7 @@
                     <span class="research-type conference">Conference Paper</span>
                     <span class="research-type presentation">Presentation</span>
                 </div>
-<!--                <span class="research-type conference">Conference Paper</span>-->
+                <!--                <span class="research-type conference">Conference Paper</span>-->
                 <span class="research-year">2026 May 14</span>
             </div>
 
@@ -111,9 +111,18 @@
             </div>
 
             <p class="research-abstract">
+                Introduces TTSVowelViz, a tool that visualises vowel spaces during text-to-speech model training,
+                bridging linguistic knowledge and AI development. It tracks how vowel sounds are learned over time,
+                revealing linguistic characteristics and improving interpretability beyond traditional loss curves.
             </p>
 
             <div class="research-links">
+                <a class="research-link secondary"
+                   href="https://drive.google.com/file/d/1C6PCFtvGbRyYzEJINaohqajNqCz3QE8q/view?usp=drive_link"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://drive.google.com/favicon.ico" width="16">
+                    <span>Paper</span>
+                </a>
                 <a class="research-link secondary" href="https://pypi.org/project/ttsvowelviz/"
                    target="_blank">
                     <img alt="" class="link-icon" height="16" src="https://pypi.org/favicon.ico" width="16">
@@ -130,25 +139,30 @@
                     <img alt="" class="link-icon" height="16" src="https://cdn.simpleicons.org/github/ffffff"
                          width="16">
                     <span>Demo</span>
-                </a>
+                </a><button class="research-link cite-btn" onclick="showCitation(this)">
+                <span class="link-icon">📌</span>
+                <span>Cite</span>
+            </button>
             </div>
 
+            <!-- Hidden citation -->
             <div class="citation-box" style="display: none;">
                 <div class="citation-tabs">
                     <button class="citation-tab active" onclick="switchCitation(this, 'bibtex')">BibTeX</button>
                     <button class="citation-tab" onclick="switchCitation(this, 'apa')">APA</button>
                     <button class="citation-tab" onclick="switchCitation(this, 'mla')">MLA</button>
+                    <button class="citation-tab" onclick="switchCitation(this, 'ieee')">IEEE</button>
                 </div>
                 <div class="citation-content">
-                        <pre class="citation-text bibtex active">@inproceedings{yourname2024efficient,
-  title={Efficient Attention Mechanisms for Large-Scale Transformers},
-  author={Your Name and Johnson, Alice},
-  booktitle={Advances in Neural Information Processing Systems},
-  volume={37},
-  year={2024}
+                    <pre class="citation-text bibtex active">@inproceedings{Udawatta_2026_LREC,
+    author={Udawatta, Pasindu and James, James and Balamurali, B.T. and Watson, Catherine and Nicholas, Ake and Abeysinghe, Binu},
+    title={{TTSVowelViz: A Tool for Visualising Text-to-Speech Model Training via Vowel Spaces}},
+    booktitle={Language Resources and Evaluation Conference (LREC)},
+    year={2026}
 }</pre>
-                    <pre class="citation-text apa">Your Name & Johnson, A. (2024). Efficient Attention Mechanisms for Large-Scale Transformers. In Advances in Neural Information Processing Systems (Vol. 37).</pre>
-                    <pre class="citation-text mla">Your Name and Alice Johnson. "Efficient Attention Mechanisms for Large-Scale Transformers." Advances in Neural Information Processing Systems, vol. 37, 2024.</pre>
+                    <pre class="citation-text apa">Udawatta, P., James, J., Balamurali, B.T., Watson, C., Nicholas, A., & Abeysinghe, B. (2026). TTSVowelViz: A Tool for Visualising Text-to-Speech Model Training via Vowel Spaces. <i>Language Resources and Evaluation Conference (LREC)</i>.</pre>
+                    <pre class="citation-text mla">Udawatta, Pasindu, et al. “TTSVowelViz: A Tool for Visualising Text-to-Speech Model Training via Vowel Spaces.” <i>Language Resources and Evaluation Conference (LREC)</i>, 2026.</pre>
+                    <pre class="citation-text ieee">P. Udawatta, J. James, B.T. Balamurali, C. Watson, A. Nicholas, and B. Abeysinghe, “TTSVowelViz: A Tool for Visualising Text-to-Speech Model Training via Vowel Spaces,” <i>Language Resources and Evaluation Conference (LREC)</i>, 2026.</pre>
                 </div>
                 <button class="copy-citation-btn" onclick="copyCitation(this)">Copy to Clipboard</button>
             </div>
@@ -157,7 +171,8 @@
         <!-- Journal Article -->
         <div class="research-item"
              data-month="9"
-             data-search-text="use of prompt-based learning for code-mixed and code-switched text classification pasindu udawatta indunil udayangana chathulanka gamage ravi shekhar surangika ranathunga code-mixing code-switching pre-trained language models xlm-r script adapters sinhala kannada hindi" data-type="journal" data-year="2024">
+             data-search-text="use of prompt-based learning for code-mixed and code-switched text classification pasindu udawatta indunil udayangana chathulanka gamage ravi shekhar surangika ranathunga code-mixing code-switching pre-trained language models xlm-r script adapters sinhala kannada hindi"
+             data-type="journal" data-year="2024">
             <div class="research-header">
                 <span class="research-type journal">Journal Article</span>
                 <span class="research-year">2024 Sep 09</span>
@@ -180,10 +195,9 @@
             </div>
 
             <p class="research-abstract">
-                Explores code-mixed and code-switched text classification using prompt-based learning. It introduces a
+                Explores code-mixed and code-switched text classification using prompt-based learning and introduces a
                 novel approach which combines script-aware modeling with task-specific adapters. Experiments show that
-                this method outperforms standard fine-tuning and prompting techniques across sentiment analysis,
-                hate-speech detection, and humour classification.
+                proposed method outperforms standard fine-tuning and prompting techniques.
             </p>
 
             <div class="research-links">
@@ -198,6 +212,12 @@
                          width="16">
                     <span>Code</span>
                 </a>
+                <a class="research-link secondary" href="https://youtu.be/Ab1Tc9GYmpY?si=Cx1_TcZYKyV1rcgY"
+                   target="_blank">
+                    <img alt="" class="link-icon" height="16" src="https://youtube.com/favicon.ico"
+                         width="16">
+                    <span>Video</span>
+                </a>
                 <a class="research-link secondary"
                    href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=gwabgvAAAAAJ&citation_for_view=gwabgvAAAAAJ:u-x6o8ySG0sC"
                    target="_blank">
@@ -211,7 +231,7 @@
                     <span>LinkedIn</span>
                 </a>
                 <button class="research-link cite-btn" onclick="showCitation(this)">
-                    <span class="link-icon">📝</span>
+                    <span class="link-icon">📌</span>
                     <span>Cite</span>
                 </button>
             </div>
@@ -245,7 +265,8 @@
         <!-- Poster -->
         <div class="research-item"
              data-month="4"
-             data-search-text="ttsvowelviz a tool for visualising text-to-speech model training through vowel spaces pasindu udawatta jesin james b.t. balamurali catherine watson ake nicholas binu abeysinghe" data-type="poster" data-year="2025">
+             data-search-text="ttsvowelviz a tool for visualising text-to-speech model training through vowel spaces pasindu udawatta jesin james b.t. balamurali catherine watson ake nicholas binu abeysinghe"
+             data-type="poster" data-year="2025">
             <div class="research-header">
                 <span class="research-type poster">Poster</span>
                 <span class="research-year">2025 Apr 08</span>
@@ -271,8 +292,7 @@
             <p class="research-abstract">
                 TTSVowelViz is an interactive tool that visualises vowel spaces in real-time during text-to-speech model
                 training. By mapping vowel sounds using formant frequencies, it helps to identify which sounds are
-                accurately learned, enabling early detection of issues without costly retraining. It bridges the gap
-                between linguistic analysis and model development.
+                accurately learned, enabling early detection of issues without costly retraining.
             </p>
 
             <div class="research-links">
@@ -317,7 +337,8 @@
         <!-- Presentation -->
         <div class="research-item"
              data-month="11"
-             data-search-text="can vowel space visualisation reveal how text-to-speech systems learn pasindu udawatta jesin james catherine watson ake nicholas b.t. balamurali low-resource language bias" data-type="presentation" data-year="2025">
+             data-search-text="can vowel space visualisation reveal how text-to-speech systems learn pasindu udawatta jesin james catherine watson ake nicholas b.t. balamurali low-resource language bias"
+             data-type="presentation" data-year="2025">
             <div class="research-header">
                 <span class="research-type presentation">Presentation</span>
                 <span class="research-year">2025 Nov 28</span>
@@ -339,10 +360,10 @@
             </div>
 
             <p class="research-abstract">
-                How do we improve text-to-speech for underrepresented languages? By using vowel space visualisation to
-                track language or accent learning during development. We adapted a text-to-speech system from General
-                American to New Zealand English, confirming the method reflects human perception, with future work
-                extending to te reo Māori.
+                Proposes using vowel space visualisation to evaluate how well text-to-speech systems learn vowel sounds.
+                Results show that as the system develops, its vowel production becomes more similar to real speech,
+                aligning with human perception and demonstrating the method’s effectiveness for evaluating speech
+                learning.
             </p>
 
             <div class="research-links">
