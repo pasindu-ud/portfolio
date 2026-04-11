@@ -560,6 +560,15 @@
                 flex-direction: column;
             }
         }
+
+        footer {
+            text-align: center;
+            padding: 24px 16px;
+            margin-top: 48px;
+            font-size: 14px;
+            opacity: 0.55;
+            border-top: 1px solid rgba(128, 128, 128, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -703,6 +712,10 @@
     </div>
 </div>
 
+<footer>
+    <p>© <span id="footer-year"></span> Pasindu Udawatta. Built with care and attention to detail.</p>
+</footer>
+
 <script>
     function toggleMenu() {
         const navLinks = document.querySelector('.nav-links');
@@ -728,6 +741,9 @@
             }
         });
     });
+
+    // Update the footer with the current year
+    document.getElementById('footer-year').textContent = new Date().getFullYear().toString();
 </script>
 </body>
 </html>

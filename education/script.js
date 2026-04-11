@@ -50,3 +50,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.timeline-item').forEach(item => {
     observer.observe(item);
 });
+
+// Update the footer with the current year
+document.getElementById('footer-year').textContent = new Date().getFullYear().toString();
