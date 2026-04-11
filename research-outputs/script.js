@@ -260,3 +260,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply initial sort
     applyFiltersAndSort();
 });
+
+/* =====================================================
+   On page load, scroll to the anchored item and highlight it
+   ===================================================== */
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) {
+        const el = document.querySelector(hash);
+        if (el) {
+            setTimeout(() => {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                el.style.transition = 'box-shadow 0.3s';
+                el.style.boxShadow = '0 0 0 3px var(--accent, #e4a853)';
+                setTimeout(() => el.style.boxShadow = '', 2000);
+            }, 300);
+        }
+    }
+});
