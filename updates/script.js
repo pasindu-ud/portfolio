@@ -197,6 +197,21 @@ function goToSlide(dot, index) {
     carouselInner.style.transform = `translateX(-${index * 100}%)`;
 }
 
+// Auto-play carousel (optional - uncomment to enable)
+function autoPlayCarousels() {
+    const carousels = document.querySelectorAll('.media-carousel');
+
+    carousels.forEach(carousel => {
+        setInterval(() => {
+            const nextButton = carousel.querySelector('.carousel-btn.next');
+            moveSlide(nextButton, 1);
+        }, 5000); // Change slide every 5 seconds
+    });
+}
+
+// Start auto-play when page loads
+document.addEventListener('DOMContentLoaded', autoPlayCarousels);
+
 /* =====================================================
    BACK TO TOP BUTTON
    ===================================================== */
