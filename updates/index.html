@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Pasindu Udawatta</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="bg-decoration">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+</div>
+
+<nav>
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../education/index.html">Education</a></li>
+        <li><a href="../research-outputs/index.html">Research</a></li>
+        <li><a class="active" href="index.html">Updates</a></li>
+    </ul>
+    <div class="mobile-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Latest Updates</h1>
+        <p class="page-subtitle">NEWS & ANNOUNCEMENTS</p>
+    </div>
+
+    <!-- Filter Controls -->
+    <div class="controls-section" style="display: none;">
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-category="all" onclick="filterByCategory('all')">
+                All <span class="count">12</span>
+            </button>
+            <button class="filter-tab" data-category="news" onclick="filterByCategory('news')">
+                📰 News <span class="count">4</span>
+            </button>
+            <button class="filter-tab" data-category="research" onclick="filterByCategory('research')">
+                🔬 Research <span class="count">3</span>
+            </button>
+            <button class="filter-tab" data-category="achievement" onclick="filterByCategory('achievement')">
+                🏆 Achievement <span class="count">3</span>
+            </button>
+            <button class="filter-tab" data-category="announcement" onclick="filterByCategory('announcement')">
+                📢 Announcement <span class="count">2</span>
+            </button>
+        </div>
+
+        <div class="search-container">
+            <input class="search-input"
+                   oninput="searchUpdates(this.value)"
+                   placeholder="Search updates by title or content..."
+                   type="text">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <div class="sort-options">
+            <span class="sort-label">Sort by:</span>
+            <button class="sort-btn active" onclick="sortBy('date')">Date (Newest)</button>
+            <button class="sort-btn" onclick="sortBy('engagement')">Engagement</button>
+        </div>
+
+        <div class="results-info">
+            <span id="resultsCount">Showing 12 updates</span>
+        </div>
+    </div>
+
+    <!-- Updates Grid -->
+    <div class="updates-grid">
+
+        <!-- Update Card 1 -->
+        <div class="update-card" data-category="research" data-date="2026-06-04">
+
+            <!-- Media Carousel -->
+            <div class="media-carousel" data-slides="1">
+                <div class="carousel-inner">
+                    <div class="carousel-slide active">
+                        <img alt="Interspeech 2026" class="carousel-image-real" src="../data/updates/Interspeech-2026-paper-acceptance.gif">
+                    </div>
+                </div>
+                <button class="carousel-btn prev" onclick="moveSlide(this, -1)">‹</button>
+                <button class="carousel-btn next" onclick="moveSlide(this, 1)">›</button>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="goToSlide(this, 0)"></span>
+                    <span class="dot" onclick="goToSlide(this, 1)"></span>
+                    <span class="dot" onclick="goToSlide(this, 2)"></span>
+                </div>
+            </div>
+
+            <div class="update-content">
+                <div>
+                    <span class="update-date-inline">2026 Jun 04</span>
+<!--                    <span class="update-category-inline research">📚 Research</span>-->
+                </div>
+
+                <h3 class="update-title">Interspeech 2026</h3>
+
+                <p class="update-text">
+                    Our paper, "Phonetically Grounded Vowel Space Metrics for Evaluating Synthetic Speech During TTS Model Training", has been accepted to Interspeech 2026.
+                </p>
+
+                <div class="update-links">
+                    <a class="update-link secondary"
+                       href="https://www.linkedin.com/posts/pasindu-udawatta_interspeech2026-speechtechnology-tts-activity-7468242557848965120-GNng?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5a-UYBoHmAKSq0uqskgSaTLmot1Y7tBE0"
+                       target="_blank">
+                        <img alt="" class="link-icon" height="16" src="../data/favicons/LinkedIn.png" width="16">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a class="update-link secondary" href="https://interspeech2026.org/en-AU" target="_blank">
+                        <img alt="" class="link-icon" height="16" src="../data/favicons/Interspeech-2026.png" width="16">
+                        <span>Conference Website</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--        &lt;!&ndash; Update Card 2: New Position &ndash;&gt;-->
+        <!--        <div class="update-card" data-category="achievement" data-date="2024-03-10" data-engagement="256"-->
+        <!--             data-search-text="new position researcher machine learning company">-->
+
+        <!--            <div class="media-carousel" data-slides="2">-->
+        <!--                <div class="carousel-inner">-->
+        <!--                    <div class="carousel-slide active">-->
+        <!--                        <div class="media-placeholder">🏢</div>-->
+        <!--                        <p class="media-caption">Company Office</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="carousel-slide">-->
+        <!--                        <div class="media-placeholder">👔</div>-->
+        <!--                        <p class="media-caption">First Day</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <button class="carousel-btn prev" onclick="moveSlide(this, -1)">‹</button>-->
+        <!--                <button class="carousel-btn next" onclick="moveSlide(this, 1)">›</button>-->
+        <!--                <div class="carousel-dots">-->
+        <!--                    <span class="dot active" onclick="goToSlide(this, 0)"></span>-->
+        <!--                    <span class="dot" onclick="goToSlide(this, 1)"></span>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            <div class="update-content">-->
+        <!--                <div>-->
+        <!--                    <span class="update-date-inline">Mar 10, 2024</span>-->
+        <!--                    <span class="update-category-inline achievement">🏆 Achievement</span>-->
+        <!--                </div>-->
+
+        <!--                <h3 class="update-title">Joined AI Research Lab as Senior Researcher</h3>-->
+
+        <!--                <p class="update-text">-->
+        <!--                    Thrilled to announce that I've joined the AI Research Lab as a Senior Researcher!-->
+        <!--                    I'll be leading innovative projects in machine learning and artificial intelligence.-->
+        <!--                    Looking forward to collaborating with brilliant minds and pushing the boundaries of what's possible.-->
+        <!--                </p>-->
+
+        <!--                <div class="update-links">-->
+        <!--                    <a class="update-link primary" href="#" target="_blank">-->
+        <!--                        <span>🏢</span>-->
+        <!--                        <span>Lab Website</span>-->
+        <!--                    </a>-->
+        <!--                    <a class="update-link secondary" href="#" target="_blank">-->
+        <!--                        <span>💼</span>-->
+        <!--                        <span>LinkedIn Post</span>-->
+        <!--                    </a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <!--        &lt;!&ndash; Update Card 3: Conference Talk &ndash;&gt;-->
+        <!--        <div class="update-card" data-category="news" data-date="2024-02-28" data-engagement="98"-->
+        <!--             data-search-text="conference presentation talk icml machine learning">-->
+
+        <!--            <div class="media-carousel" data-slides="3">-->
+        <!--                <div class="carousel-inner">-->
+        <!--                    <div class="carousel-slide active">-->
+        <!--                        <div class="media-placeholder">🎤</div>-->
+        <!--                        <p class="media-caption">Presentation Moment</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="carousel-slide">-->
+        <!--                        <div class="media-placeholder">👥</div>-->
+        <!--                        <p class="media-caption">Audience Q&A</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="carousel-slide">-->
+        <!--                        <div class="media-placeholder">🏛️</div>-->
+        <!--                        <p class="media-caption">Conference Hall</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <button class="carousel-btn prev" onclick="moveSlide(this, -1)">‹</button>-->
+        <!--                <button class="carousel-btn next" onclick="moveSlide(this, 1)">›</button>-->
+        <!--                <div class="carousel-dots">-->
+        <!--                    <span class="dot active" onclick="goToSlide(this, 0)"></span>-->
+        <!--                    <span class="dot" onclick="goToSlide(this, 1)"></span>-->
+        <!--                    <span class="dot" onclick="goToSlide(this, 2)"></span>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            <div class="update-content">-->
+        <!--                <div>-->
+        <!--                    <span class="update-date-inline">Feb 28, 2024</span>-->
+        <!--                    <span class="update-category-inline news">📰 News</span>-->
+        <!--                </div>-->
+
+        <!--                <h3 class="update-title">Presented at ICML 2024 Conference</h3>-->
+
+        <!--                <p class="update-text">-->
+        <!--                    Had an amazing experience presenting our research at ICML 2024 in Vienna!-->
+        <!--                    The presentation was well-received with insightful questions from the research community.-->
+        <!--                    Grateful for the opportunity to share our work and connect with fellow researchers worldwide.-->
+        <!--                </p>-->
+
+        <!--                <div class="update-links">-->
+        <!--                    <a class="update-link primary" href="#" target="_blank">-->
+        <!--                        <span>📊</span>-->
+        <!--                        <span>View Slides</span>-->
+        <!--                    </a>-->
+        <!--                    <a class="update-link secondary" href="#" target="_blank">-->
+        <!--                        <span>🎥</span>-->
+        <!--                        <span>Watch Recording</span>-->
+        <!--                    </a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <!--        &lt;!&ndash; Update Card 4: Grant Award (Single Media - No Navigation) &ndash;&gt;-->
+        <!--        <div class="update-card" data-category="announcement" data-date="2024-02-15" data-engagement="187"-->
+        <!--             data-search-text="research grant award funding">-->
+
+        <!--            <div class="media-carousel" data-slides="1">-->
+        <!--                <div class="carousel-inner">-->
+        <!--                    <div class="carousel-slide active">-->
+        <!--                        <div class="media-placeholder">🎖️</div>-->
+        <!--                        <p class="media-caption">Award Certificate</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            <div class="update-content">-->
+        <!--                <div>-->
+        <!--                    <span class="update-date-inline">Feb 15, 2024</span>-->
+        <!--                    <span class="update-category-inline announcement">📢 Announcement</span>-->
+        <!--                </div>-->
+
+        <!--                <h3 class="update-title">Awarded Research Grant - $250K Funding</h3>-->
+
+        <!--                <p class="update-text">-->
+        <!--                    Honored to announce that our research proposal has been selected for funding by the-->
+        <!--                    National Science Foundation! This $250K grant will support our work on scalable machine-->
+        <!--                    learning systems. We're excited to begin this next phase of research with expanded resources.-->
+        <!--                </p>-->
+
+        <!--                <div class="update-links">-->
+        <!--                    <a class="update-link primary" href="#" target="_blank">-->
+        <!--                        <span>📄</span>-->
+        <!--                        <span>Grant Details</span>-->
+        <!--                    </a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <!--        &lt;!&ndash; Update Card 5: Collaboration &ndash;&gt;-->
+        <!--        <div class="update-card" data-category="research" data-date="2024-02-01" data-engagement="143"-->
+        <!--             data-search-text="collaboration research project partnership">-->
+
+        <!--            <div class="media-carousel" data-slides="2">-->
+        <!--                <div class="carousel-inner">-->
+        <!--                    <div class="carousel-slide active">-->
+        <!--                        <div class="media-placeholder">🤝</div>-->
+        <!--                        <p class="media-caption">Team Collaboration</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="carousel-slide">-->
+        <!--                        <div class="media-placeholder">💡</div>-->
+        <!--                        <p class="media-caption">Project Planning</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <button class="carousel-btn prev" onclick="moveSlide(this, -1)">‹</button>-->
+        <!--                <button class="carousel-btn next" onclick="moveSlide(this, 1)">›</button>-->
+        <!--                <div class="carousel-dots">-->
+        <!--                    <span class="dot active" onclick="goToSlide(this, 0)"></span>-->
+        <!--                    <span class="dot" onclick="goToSlide(this, 1)"></span>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            <div class="update-content">-->
+        <!--                <div>-->
+        <!--                    <span class="update-date-inline">Feb 1, 2024</span>-->
+        <!--                    <span class="update-category-inline research">📚 Research</span>-->
+        <!--                </div>-->
+
+        <!--                <h3 class="update-title">Starting Collaboration with Top Research Institute</h3>-->
+
+        <!--                <p class="update-text">-->
+        <!--                    Excited to announce a new collaboration with the Advanced AI Research Institute!-->
+        <!--                    We'll be working together on cutting-edge projects in computer vision and NLP.-->
+        <!--                    This partnership will accelerate innovation and create more impact in the field.-->
+        <!--                </p>-->
+
+        <!--                <div class="update-links">-->
+        <!--                    <a class="update-link secondary" href="#" target="_blank">-->
+        <!--                        <span>🌐</span>-->
+        <!--                        <span>Institute Website</span>-->
+        <!--                    </a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+        <!--        &lt;!&ndash; Update Card 6: Workshop &ndash;&gt;-->
+        <!--        <div class="update-card" data-category="news" data-date="2024-01-20" data-engagement="76"-->
+        <!--             data-search-text="workshop tutorial teaching machine learning">-->
+
+        <!--            <div class="media-carousel" data-slides="2">-->
+        <!--                <div class="carousel-inner">-->
+        <!--                    <div class="carousel-slide active">-->
+        <!--                        <div class="media-placeholder">📚</div>-->
+        <!--                        <p class="media-caption">Workshop Materials</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="carousel-slide">-->
+        <!--                        <div class="media-placeholder">👨‍🏫</div>-->
+        <!--                        <p class="media-caption">Teaching Session</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <button class="carousel-btn prev" onclick="moveSlide(this, -1)">‹</button>-->
+        <!--                <button class="carousel-btn next" onclick="moveSlide(this, 1)">›</button>-->
+        <!--                <div class="carousel-dots">-->
+        <!--                    <span class="dot active" onclick="goToSlide(this, 0)"></span>-->
+        <!--                    <span class="dot" onclick="goToSlide(this, 1)"></span>-->
+        <!--                </div>-->
+        <!--            </div>-->
+
+        <!--            <div class="update-content">-->
+        <!--                <div>-->
+        <!--                    <span class="update-date-inline">Jan 20, 2024</span>-->
+        <!--                    <span class="update-category-inline news">📰 News</span>-->
+        <!--                </div>-->
+
+        <!--                <h3 class="update-title">Conducted Workshop on Deep Learning Fundamentals</h3>-->
+
+        <!--                <p class="update-text">-->
+        <!--                    Had a great time conducting a workshop on "Deep Learning Fundamentals" for 150+-->
+        <!--                    participants. Covered neural networks, backpropagation, optimization techniques, and-->
+        <!--                    practical implementations. Thank you to everyone for the engaging discussions!-->
+        <!--                </p>-->
+
+        <!--                <div class="update-links">-->
+        <!--                    <a class="update-link primary" href="#" target="_blank">-->
+        <!--                        <span>📊</span>-->
+        <!--                        <span>View Materials</span>-->
+        <!--                    </a>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+    </div>
+</div>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+    <span class="back-to-top-icon">↑</span>
+    <span class="back-to-top-text">Top</span>
+</button>
+
+<footer>
+    <p>© <span id="footer-year"></span> Pasindu Udawatta. Built with care and attention to detail.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
