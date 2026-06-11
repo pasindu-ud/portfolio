@@ -327,3 +327,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply initial sort
     applyFiltersAndSort();
 });
+
+// Update the footer with the current year
+document.getElementById('footer-year').textContent = new Date().getFullYear().toString();
