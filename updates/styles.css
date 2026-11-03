@@ -548,13 +548,13 @@ nav {
     margin-left: 0.5rem;
 }
 
-.update-category-inline.news {
+.update-category-inline.research {
     background: rgba(79, 172, 254, 0.15);
     border: 1px solid rgba(79, 172, 254, 0.3);
     color: #4faafe;
 }
 
-.update-category-inline.research {
+.update-category-inline.academia {
     background: rgba(228, 168, 83, 0.15);
     border: 1px solid rgba(228, 168, 83, 0.3);
     color: var(--accent-gold);
